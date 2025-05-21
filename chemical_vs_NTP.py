@@ -148,7 +148,8 @@ def create_total_fuel_cost_plot(df):
     """Bar chart showing total fuel cost for each engine."""
     plt.figure(figsize=(12, 6))
 
-    fuel_cost_data = df[['Engine', 'Fuel Cost (USD)']].sort_values('Fuel Cost (USD)', ascending=False)
+    # Filter out Apollo SPS AJ10-137
+    fuel_cost_data = df[df['Engine'] != 'Apollo SPS (AJ10-137)'][['Engine', 'Fuel Cost (USD)']].sort_values('Fuel Cost (USD)', ascending=False)
 
     plt.bar(fuel_cost_data['Engine'], fuel_cost_data['Fuel Cost (USD)'] / 1000)
     plt.xticks(rotation=45, ha='right')
@@ -209,7 +210,7 @@ def main():
     create_category_comparison(df)
     create_fuel_cost_vs_thrust_plot(df)
     create_engines_table(df)
-    
+    create_total_fuel_cost_plot(df)
     print_statistics(df)
 
 if __name__ == "__main__":
