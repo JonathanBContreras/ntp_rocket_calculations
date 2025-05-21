@@ -4,8 +4,9 @@ Rocketdyne J-2 (Saturn V S-IVB),Chemical,6000,1033,421,67,153000,270
 Aerojet RL10 (Centaur),Chemical,6000,110.1,465.5,40,111000,270
 Rocketdyne RS-25 (Space Shuttle/SLS),Chemical,6000,2279,452,66,110000,270
 SpaceX Merlin 1D Vacuum,Chemical,6000,981,348,184,118000,270
-SpaceX Raptor Vacuum,Chemical,6000,2500,380,180,245000,270
+SpaceX Raptor 3 Vacuum,Chemical,6000,2500,380,180,245000,270
 Apollo SPS (AJ10-137),Chemical,6000,91.2,314.5,30,15700000,270
 S5.92 (Fregat upper stage),Chemical,6000,19.6,327,26.7,605000,270
 NERVA XE-Prime,NTP,6000,247,710,13.6,375000,270, 1140
-Theoretical NTP,NTP,6000,10.5,1067,14.3,118000,270, 36
+Theoretical NTP (270 day Transit),NTP,6000,10.5,1067,24.76,80491,270, 36
+Theoretical NTP (63 day Transit),NTP,14505,10.5,1067,24.76,311805,63, 36

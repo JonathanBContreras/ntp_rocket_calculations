@@ -144,6 +144,26 @@ def create_fuel_cost_vs_thrust_plot(df):
     plt.savefig('ntp_fuel_cost_vs_thrust.png')
     plt.close()
 
+def create_total_fuel_cost_plot(df):
+    """Bar chart showing total fuel cost for each engine."""
+    plt.figure(figsize=(12, 6))
+
+    fuel_cost_data = df[['Engine', 'Fuel Cost (USD)']].sort_values('Fuel Cost (USD)', ascending=False)
+
+    plt.bar(fuel_cost_data['Engine'], fuel_cost_data['Fuel Cost (USD)'] / 1000)
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel('Engine')
+    plt.ylabel('Total Fuel Cost (k USD)')
+    plt.title('Total Fuel Cost by Engine')
+
+    for i, v in enumerate(fuel_cost_data['Fuel Cost (USD)']):
+        plt.text(i, v/1000, f'${v/1000:,.0f}k', ha='center', va='bottom')
+    
+    plt.tight_layout()
+    plt.savefig('total_fuel_cost.png', bbox_inches='tight', dpi=300)
+    plt.close()
+
+
 def create_engines_table(df):
     """Create a pretty table of engines organized by category."""
     # Select and organize columns
